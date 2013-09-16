@@ -17,17 +17,18 @@ gem install fontcustom
 ## Quick Start
 
 ```sh
-fontcustom compile path/to/vectors                  # Compiles icons into `fontcustom/`
-fontcustom compile path/to/vectors -o assets/fonts  # Compiles icons into `assets/fonts/`
-fontcustom watch path/to/vectors -t=scss preview    # Compiles when vectors are changed/added/deleted
-                                                    # and includes a scss partial and glyph preview
+fontcustom compile path/to/vectors  # Compiles icons into `fontcustom/`
+fontcustom watch path/to/vectors    # Compiles when vectors are changed/added/removed
 
-fontcustom help                                     # to see all options
+fontcustom compile                  # Uses configuration options from `fontcustom.yml`
+fontcustom watch                    # or `config/fontcustom.yml`
+
+fontcustom help                     # See all options
 ```
 
 ## Configuration
 
-To avoid finger-fatigue, include a fontcustom.yml configuration file with your vectors with `fontcustom config`.
+To avoid finger-fatigue, create a configuration file with `fontcustom config`. Typically, this should live in the directory where you plan on running `fontcustom` commands.
 
 ```yml
 # Available Options (defaults shown)
