@@ -29,7 +29,7 @@ module Fontcustom
     def set_options
       set_config_path
       load_config
-      cleanup_prefix_and_postfix_argments
+      cleanup_prefix_and_postfix_arguments
       merge_options
       set_data_path
       set_input_paths
