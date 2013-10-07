@@ -213,7 +213,8 @@ module Fontcustom
     end
 
     def cleanup_prefix_and_postfix_arguments
-      p @cli_options
+      @cli_options[:css_prefix] = $1 if /^'(.*)'$/.match(@cli_options[:css_prefix])
+      @cli_options[:css_postfix] = $1 if /^'(.*)'$/.match(@cli_options[:css_postfix])
     end
   end
 end
