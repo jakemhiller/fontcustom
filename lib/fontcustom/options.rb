@@ -29,6 +29,7 @@ module Fontcustom
     def set_options
       set_config_path
       load_config
+      cleanup_prefix_and_postfix_argments
       merge_options
       set_data_path
       set_input_paths
@@ -209,6 +210,10 @@ module Fontcustom
           template
         end
       end
+    end
+
+    def cleanup_prefix_and_postfix_arguments
+      p @cli_options
     end
   end
 end
