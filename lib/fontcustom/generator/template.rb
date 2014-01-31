@@ -32,11 +32,17 @@ module Fontcustom
       def set_relative_paths
         fonts = @manifest.get :fonts
         name = File.basename fonts.first, File.extname(fonts.first)
-        fonts_path = Pathname.new @options[:output][:fonts]
-        css_path = Pathname.new @options[:output][:css]
-        preview_path = Pathname.new @options[:output][:preview]
+        fonts_path = Pathname.new(@options[:output][:fonts]).realdirpath
+        css_path = Pathname.new(@options[:output][:css]).realdirpath
+        preview_path = Pathname.new(@options[:output][:preview]).realdirpath
         @font_path = File.join fonts_path.relative_path_from(css_path).to_s, name
-        @font_path_alt = @options[:preprocessor_path].nil? ? @font_path : File.join(@options[:preprocessor_path], name)
+        @font_path_alt = if @options[:preprocessor_path].nil? 
+          @font_path
+        elsif ! @options[:preprocessor_path] || @options[:preprocessor_path].empty?
+          name
+        else
+          File.join(@options[:preprocessor_path], name)
+        end
         @font_path_preview = File.join fonts_path.relative_path_from(preview_path).to_s, name
       end
 
@@ -109,7 +115,7 @@ module Fontcustom
 
       def font_face(style = :normal)
         case style
-        when :rails
+        when :preprocessor
           url = "font-url"
           path = @font_path_alt
         when :preview
