@@ -26,19 +26,19 @@ module Fontcustom
       :desc => "The font's name. Also determines the file names of generated templates.",
       :default => DEFAULT_OPTIONS[:font_name]
     
-    class_option :font_design_size, :aliases => '-x', :type => :string,
+    class_option :font_design_size, :aliases => '-x', :type => :integer,
       :desc => "Size (in pica points) for which this font was designed.",
       :default => DEFAULT_OPTIONS[:font_design_size]
 
-    class_option :font_em, :aliases => '-m', :type => :string,
+    class_option :font_em, :aliases => '-m', :type => :integer,
       :desc => "The em size of the font. Setting this will scale the entire font to the given size.",
       :default => DEFAULT_OPTIONS[:font_em]
 
-    class_option :font_ascent, :aliases => '-a', :type => :string,
+    class_option :font_ascent, :aliases => '-a', :type => :integer,
       :desc => "The font's ascent.",
       :default => DEFAULT_OPTIONS[:font_ascent]
 
-    class_option :font_descent, :aliases => '-z', :type => :string,
+    class_option :font_descent, :aliases => '-z', :type => :integer,
       :desc => "The font's descent.",
       :default => DEFAULT_OPTIONS[:font_descent]
 
