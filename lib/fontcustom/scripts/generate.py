@@ -30,10 +30,10 @@ options = manifest['options']
 
 font = fontforge.font()
 font.encoding = 'UnicodeFull'
-font.design_size = 16
-font.em = 512
-font.ascent = 448
-font.descent = 64
+font.design_size = options['font_design_size']
+font.em = options['font_em']
+font.ascent = options['font_ascent']
+font.descent = options['font_descent']
 font.fontname = options['font_name']
 font.familyname = options['font_name']
 font.fullname = options['font_name']
