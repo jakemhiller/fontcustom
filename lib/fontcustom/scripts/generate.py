@@ -38,7 +38,7 @@ font.fontname = options['font_name']
 font.familyname = options['font_name']
 font.fullname = options['font_name']
 if options['autowidth']:
-    font.autoWidth(0, 0, 512)
+    font.autoWidth(0, 0, options['font_em'])
 
 # NOTE not referenced anywhere, safe to remove?
 KERNING = 15
@@ -73,7 +73,7 @@ def createGlyph( name, source, code ):
             glyph.left_side_bearing = glyph.right_side_bearing = 0
             glyph.round()
         else:
-            glyph.width = 512
+            glyph.width = options['font_em']
 
 for glyph, data in manifest['glyphs'].iteritems():
     name = createGlyph(glyph, data['source'], data['codepoint'])
