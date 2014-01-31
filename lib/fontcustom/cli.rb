@@ -30,7 +30,7 @@ module Fontcustom
       :desc => "Size (in pica points) for which this font was designed.",
       :default => DEFAULT_OPTIONS[:font_design_size]
 
-    class_option :font_em, :aliases => '-m', :type => :string,
+    class_option :font_em, :aliases => '-m', :type => :numeric,
       :desc => "The em size of the font. Setting this will scale the entire font to the given size.",
       :default => DEFAULT_OPTIONS[:font_em]
 
