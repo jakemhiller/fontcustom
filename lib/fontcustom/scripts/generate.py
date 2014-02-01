@@ -28,6 +28,8 @@ options = manifest['options']
 # Font
 #
 
+design_px = options['font_em'] / options['font_design_size']
+
 font = fontforge.font()
 font.encoding = 'UnicodeFull'
 font.design_size = options['font_design_size']
