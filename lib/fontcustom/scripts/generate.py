@@ -74,6 +74,12 @@ def createGlyph( name, source, code ):
             glyph.round()
         else:
             glyph.width = options['font_em']
+            width = glyph.width - glyph.left_side_bearing - glyph.right_side_bearing
+            aligned_to_pixel_grid = (width % design_px == 0)
+            if (aligned_to_pixel_grid):
+                shift = glyph.left_side_bearing % design_px
+                glyph.left_side_bearing = glyph.left_side_bearing - shift
+                glyph.right_side_bearing = glyph.right_side_bearing + shift
 
 for glyph, data in manifest['glyphs'].iteritems():
     name = createGlyph(glyph, data['source'], data['codepoint'])
