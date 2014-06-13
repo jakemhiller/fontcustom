@@ -139,7 +139,7 @@ module Fontcustom
 @media screen and (-webkit-min-device-pixel-ratio:0) {
   @font-face {
     font-family: "#{font_name}";
-    src: url("#{path}.svg##{font_name}") format("svg");
+    src: #{url}("#{path}.svg##{font_name}") format("svg");
   }
 }|
       end
@@ -149,6 +149,21 @@ module Fontcustom
           @options[:css_selector].sub("{{glyph}}", name.to_s) + ":before"
         end
         output.join ",\n"
+      end
+
+      def glyph_properties
+%Q|  display: inline-block;
+  font-family: "#{font_name}";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-decoration: inherit;
+  text-rendering: optimizeLegibility;
+  text-transform: none;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;|
       end
 
       def glyphs

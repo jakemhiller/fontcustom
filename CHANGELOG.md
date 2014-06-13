@@ -1,3 +1,9 @@
+## 1.3.3 (2/20/2014)
+
+* Removes ttfautohint ([#160c](https://github.com/FontCustom/fontcustom/pull/160#issuecomment-34593191))
+* Fixes rails-scss template helper ([#185](https://github.com/FontCustom/fontcustom/issues/185))
+* Adds `text-rendering: optimizeLegibility` ([#181](https://github.com/FontCustom/fontcustom/pull/181))
+
 ## 1.3.2 (1/31/2014)
 
 * Fixes `preprocessor_path` for Rails asset pipeline / Sprockets ([#162](https://github.com/FontCustom/fontcustom/pull/162), [#167](https://github.com/FontCustom/fontcustom/pull/167))
